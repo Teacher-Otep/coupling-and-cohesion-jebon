@@ -1,19 +1,26 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.coffeeshop.naive;
 
 public class Main {
+
     public static void main(String[] args) {
+
         System.out.println("=== Starting Naive Coffee Shop System ===");
-        
-        OrderProcessor processor = new OrderProcessor();
-        
-        // Simulating a customer ordering a Java Chip Frappe
-        // Parameters: Customer Name, Coffee Item, Base Price
-        processor.processOrder("Juan Dela Cruz", "Java Chip Frappe", 150.0);
-        
+
+        String customerName = "Apito pogi";
+        String coffeeType = "kopiko redhorse flavor";
+        double price = 300.00;
+
+        // Depend on interfaces instead of concrete classes
+        TaxService taxService = new TaxComputation();
+        ReceiptService receiptService = new receipt();
+        StorageService storageService = new storage();
+
+        double finalPrice = taxService.computeTax(price);
+
+        receiptService.printReceipt(customerName, coffeeType, price, finalPrice);
+
+        storageService.saveOrder(customerName, coffeeType, finalPrice);
+
         System.out.println("\n=== Order Processing Complete ===");
     }
 }
