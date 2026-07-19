@@ -10,7 +10,6 @@ public class Main {
         String coffeeType = "kopiko redhorse flavor";
         double price = 150.00;
 
-        TaxService taxService = new TaxComputation();
         TaxService taxService = new TaxComputation(); 
         ReceiptService receiptService = new receipt();
         StorageService storageService = new storage();
