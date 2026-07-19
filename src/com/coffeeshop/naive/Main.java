@@ -8,10 +8,10 @@ public class Main {
 
         String customerName = "Apito pogi";
         String coffeeType = "kopiko redhorse flavor";
-        double price = 300.00;
+        double price = 150.00;
 
-        // Depend on interfaces instead of concrete classes
         TaxService taxService = new TaxComputation();
+        TaxService taxService = new TaxComputation(); 
         ReceiptService receiptService = new receipt();
         StorageService storageService = new storage();
 

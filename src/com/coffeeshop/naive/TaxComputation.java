@@ -7,7 +7,7 @@ public class TaxComputation implements TaxService {
 
         System.out.println("[System] Calculating final totals...");
 
-        double localTax = 0.12;
+        double localTax = 0.20;
         double taxAmount = price * localTax;
 
         return price + taxAmount;
